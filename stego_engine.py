@@ -1,13 +1,3 @@
-"""
-Stego engine.
-LSB image steganography. Logic follows the Day 3 class slides:
-- text to binary, one byte per char, 08b
-- end marker 1111111111111110
-- hide in least significant bit of each flattened pixel value
-- extract by reading LSBs until the end marker
-This module has no GUI. The interface imports these functions.
-"""
-
 import os
 import numpy as np
 from PIL import Image

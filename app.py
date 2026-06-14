@@ -1,17 +1,3 @@
-"""
-QuickCrypto Stego Suite
-A steganography and crypto desktop app in the style of the QuickCrypto interface.
-
-Run:  python app.py
-Needs: customtkinter, pillow, numpy, cryptography
-Install: pip install customtkinter pillow numpy cryptography
-
-Layout mirrors the QuickCrypto reference: a full menu bar, a button grid on the
-left, a logo, a text and image work area, and a bottom tab row.
-
-The art in the assets folder is original. It is not copied from QuickCrypto.
-"""
-
 import os
 import sys
 import threading

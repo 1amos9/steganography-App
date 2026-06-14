@@ -103,10 +103,4 @@ Text to binary: one byte per character, format(ord(c), '08b').
 End marker: 1111111111111110, the 16 bit marker from the slides.
 Hide: value = (value & 254) | bit, on each flattened pixel or audio sample.
 Extract: read the low bit of each value, stop at the end marker.
-Compare and recover: NumPy difference and a pixel printout, slides 33, 35, 36.
-
-
-THE LOGO AND ICONS
-------------------
-I drew the logo and icons myself in make_assets.py, using simple shapes. They
-are not copied from any other app. Edit that script to change the look.
+Compare and recover: NumPy difference and a pixel printout.

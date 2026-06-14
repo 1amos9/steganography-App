@@ -1,12 +1,3 @@
-"""
-Audio stego engine.
-LSB steganography for WAV files. Same idea as the image method in the slides:
-write each payload bit into the least significant bit of each audio sample.
-
-WAV only, since it is lossless. MP3 re-compresses and destroys the hidden bits.
-Uses the standard wave module and NumPy.
-"""
-
 import os
 import wave
 import numpy as np

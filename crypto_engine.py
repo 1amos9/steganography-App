@@ -1,14 +1,3 @@
-"""
-Crypto engine for the QuickCrypto Stego Suite.
-
-Holds the real working logic behind the Encrypt, Decrypt, Shred, Tools, and
-Options menus. The GUI imports these functions.
-
-Cipher: AES-256-GCM. Key from a password using PBKDF2-HMAC-SHA256.
-Format for text: base64 of [salt 16][nonce 12][ciphertext+tag], with a "QC1:" tag.
-Format for files: bytes [magic 8][salt 16][nonce 12][ciphertext+tag].
-"""
-
 import os
 import io
 import json
@@ -284,11 +273,7 @@ def test_password_strength(password):
 # -------------------------------------------------------------------
 def create_self_decrypting_html(message, password, out_path):
     """
-    Build an HTML file holding an encrypted message. The reader opens it in a
-    browser, types the password, and the page decrypts in the browser using
-    the Web Crypto API. Same scheme as the Python side: PBKDF2-SHA256 then
-    AES-GCM.
-    """
+    Build an HTML file holding an encrypted message."""
     salt = os.urandom(SALT_LEN)
     nonce = os.urandom(NONCE_LEN)
     key = _derive_key(password, salt)

@@ -1,10 +1,3 @@
-"""
-Make original logo and icon assets for the Stego Suite.
-Run once: python make_assets.py
-Creates an assets folder with logo.png and a set of icon_*.png files.
-The art is original, drawn with simple shapes. Not copied from QuickCrypto.
-"""
-
 import os
 import math
 from PIL import Image, ImageDraw

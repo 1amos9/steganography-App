@@ -243,11 +243,6 @@ class CodeRain(tk.Canvas):
 
 
 class AngledBar(tk.Canvas):
-    """
-    A row of slanted yellow buttons, drawn on a canvas.
-    Gives the angular look from the QuickCrypto screenshots.
-    items is a list of (label, command). One canvas holds the whole row.
-    """
 
     def __init__(self, parent, items, height=34, skew=10,
                  base="#07140c", hover="#0d2a18", edge="#00b257",
@@ -260,7 +255,6 @@ class AngledBar(tk.Canvas):
         self.color_icons = color_icons
         if terminal:
             skew = 0
-        # each item is (label, command) or (label, command, icon_name)
         icon_size = max(18, height - 12) if color_icons else max(14, height - 16)
         self._icon_imgs = []
         for item in items:
@@ -314,7 +308,6 @@ class AngledBar(tk.Canvas):
             if self.terminal:
                 img = self._icon_imgs[i]
                 if self.color_icons and img is not None:
-                    # green label on the left, colourful icon on the right edge
                     self.create_text(i * slice_w + 14, height / 2, text=label,
                                      fill=self.fg, font=self.btn_font, anchor="w")
                     right_x = (i + 1) * slice_w - 18
@@ -409,17 +402,12 @@ class StegoApp(ctk.CTk):
 
     def icon(self, name):
         return self._icons.get(name)
-
-    # ===============================================================
-    # MENU BAR  (every menu from the screenshots)
-    # ===============================================================
     def _menu(self, parent):
         return tk.Menu(parent, tearoff=0, bg=MENU_BG, fg=YELLOW,
                        activebackground=YELLOW, activeforeground=BLACK,
                        font=("Arial", 10))
 
     def _build_menubar(self):
-        # custom green menu bar: build the dropdowns, then post them from buttons
         self._menus = []
 
         # File
@@ -1003,8 +991,7 @@ class StegoApp(ctk.CTk):
             "Privacy  [demo screen]",
             f"Shredding {what} is a demo screen, not a working feature.\n\n"
             "Wiping browser or free space data automatically is risky in a class "
-            "app, so this is left as a demo. The graded steganography features are "
-            "fully built and working.")
+            "app, so this is left as a demo.")
         self._set_status("privacy (demo)")
 
     # ===============================================================
@@ -2118,6 +2105,7 @@ class StegoApp(ctk.CTk):
                 "Built by:  BIKARI Amos Thibault",
                 "Reg No:    M04046/2025",
                 "Program:   MSc Information Technology",
+                "Module: Information Organization and System Securit",
                 "Lecturer:  Dr. NTIVUGURUZWA Jean de la Croix",
                 "",
                 "Knowledge & Wisdom  -  UNILAK, since 1997",
